@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Left Until Graduation</title>
+</head>
+<body>
+    <h2>Days Left Until Graduation</h2>
+    <form method="POST">
+        <label for="graduation_date">Graduation Date (YYYY-MM-DD):</label>
+        <input type="date" id="graduation_date" name="graduation_date" required>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result.total_days is not none %}
+        <p>Total days: {{ result.total_days }}</p>
+        <p>Total days (excluding final date): {{ result.total_days_excl_final }}</p>
+        <p>Total working days: {{ result.working_days }}</p>
+    {% endif %}
+    <a href="/">Back to home</a>
+</body>
+</html>
