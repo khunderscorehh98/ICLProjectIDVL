@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Problem</title>
+</head>
+<body>
+    <h2>Apartment Problem</h2>
+    <form method="POST">
+        <label for="total_units">Total Units:</label>
+        <input type="number" id="total_units" name="total_units" required>
+        <label for="rent">Rent for All Units:</label>
+        <input type="number" id="rent" name="rent" required>
+        <label for="increase">Increase in Rent:</label>
+        <input type="number" id="increase" name="increase" required>
+        <label for="maintenance">Maintenance Cost:</label>
+        <input type="number" id="maintenance" name="maintenance" required>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result.optimal_units is not none %}
+        <p>Optimal units to rent: {{ result.optimal_units }}</p>
+        <p>Maximum profit: ${{ result.max_profit }}</p>
+    {% endif %}
+    <a href="/">Back to home</a>
+</body>
+</html>
