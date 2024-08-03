@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Brunei IC Number</title>
+</head>
+<body>
+    <h2>Generate a Brunei IC Number</h2>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required>
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Generate</button>
+    </form>
+    {% if result.name is not none %}
+        <p>Name: {{ result.name }}</p>
+        <p>Nationality: {{ result.nationality }}</p>
+        <p>User ID: {{ result.user_id }}</p>
+        <p>Password: {{ result.hidden_password }}</p>
+        <p>Generated Brunei IC: {{ result.brunei_ic }}</p>
+    {% endif %}
+    <a href="/">Back to home</a>
+</body>
+</html>
